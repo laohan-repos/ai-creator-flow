@@ -1,8 +1,8 @@
 # CreatorFlow
 
-把一本书编排为竖版书籍解说视频素材的本地 Web 工具，也是「用 Codex 构建完整应用」的教学参考项目。通过四步工作流，完成书籍脚本、分镜图片、旁白配音和剪映草稿的生成与管理。
+把一本书编排为竖版书籍解说视频素材的本地 Web 工具。通过四步工作流，完成书籍脚本、分镜图片、旁白配音和剪映草稿的生成与管理。
 
-仓库根目录是当前参考实现，`starter-template/` 是学员练习起点，`docs/course/` 提供八个阶段的开发任务与验收资料。本文按当前代码说明功能和接入边界。
+仓库根目录是当前实现，`docs/` 保存八个模块的需求文档与设计稿。本文按当前代码说明功能和接入边界。
 
 ## 四步工作流
 
@@ -142,35 +142,29 @@ lib/
   media-duration.ts        ffprobe 媒体时长探测
   api-url.ts               外部接口地址处理
   http-media.ts            媒体响应与 Range 请求支持
-docs/                     产品需求与分阶段课程
+docs/                     八个模块的需求文档与设计稿
 starter-template/         学员起始项目
-scripts/validate-course.mjs 课程资料检查脚本
+scripts/validate-course.mjs 文档检查脚本
 data/                     运行时数据库，不提交到 Git
 ```
 
-## 教学与开发
-
-学习者从起始模板出发，按八个阶段逐步实现功能：项目骨架 → SQLite 项目管理 → 模型配置 → 脚本生成 → 分镜图片 → 分镜配音 → 素材管理 → 剪映草稿与批量生成。
+## 文档与验证
 
 | 资料 | 用途 |
 | --- | --- |
-| [课程入口](docs/course/README.md) | 八阶段任务与学习顺序 |
-| [教学者指南](docs/course/instructor-guide.md) | 课堂组织、示范与学员项目准备 |
+| [产品需求](docs/CreatorFlow-需求文档.md) | 八个模块的功能与验收要求 |
+| [设计稿](docs/CreatorFlow-设计稿.md) | 视觉、布局、组件与交互规范 |
 | [学员起始模板](starter-template/README.md) | 从最小项目开始练习 |
-| [产品需求](docs/CreatorFlow-需求文档.md) | 理解产品范围 |
-| [系统架构](docs/course/architecture.md) | 页面、服务、存储与外部依赖 |
-| [API 契约](docs/course/api-contracts.md) | 接口输入与输出 |
-| [验收清单](docs/course/acceptance-checklist.md) | 分阶段功能验收 |
 | [开发规则](AGENTS.md) | 修改范围、代码规范和验证要求 |
 
-每阶段至少执行构建；修改课程资料后执行课程检查：
+修改后执行构建；修改文档后执行文档检查：
 
 ```bash
 npm run build
 npm run course:check
 ```
 
-构建检查类型和生产打包，课程检查验证资料结构、文档链接及示例脚本；两者都不会替代真实外部服务验收。另有 `npm run lint` 命令，但当前项目未配置 ESLint 依赖，独立使用前需要完成相应配置。
+构建检查类型和生产打包，文档检查验证两份文档及内部链接；两者都不会替代真实外部服务验收。另有 `npm run lint` 命令，但当前项目未配置 ESLint 依赖，独立使用前需要完成相应配置。
 
 ## 常见问题
 

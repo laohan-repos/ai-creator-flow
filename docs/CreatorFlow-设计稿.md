@@ -1,4 +1,4 @@
-# CreatorFlow Design Spec
+# CreatorFlow 设计稿
 
 ## 1. 设计目标
 
@@ -308,7 +308,7 @@ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 向 Codex 提交设计任务时应附加：
 
 ```text
-界面必须遵守 docs/course/design-spec.md。
+界面必须遵守 docs/CreatorFlow-设计稿.md。
 优先复用 CSS 变量和通用组件样式，不为每个页面重新发明颜色和按钮。
 先完成信息层级和响应式布局，再添加轻量动效。
 不得引入 UI 框架替换当前视觉语言。
@@ -322,4 +322,3 @@ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 - 列表、图片、配音和草稿版本的信息层级清晰。
 - Loading、Success、Error、Empty、Disabled 五类状态均有明确表现。
 - 390 px 宽度下无关键操作被截断。
-
