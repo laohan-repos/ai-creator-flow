@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const docs = path.join(root, "docs");
-const required = ["CreatorFlow-需求文档.md", "CreatorFlow-设计稿.md"];
+const required = ["CreatorFlow-需求文档.md", "CreatorFlow-设计稿.png"];
 const errors = [];
 
 if (!existsSync(docs)) {
@@ -29,6 +29,13 @@ if (existsSync(requirements)) {
 for (const file of required) {
   const fullPath = path.join(docs, file);
   if (!existsSync(fullPath)) continue;
+  if (file.endsWith(".png")) {
+    const header = readFileSync(fullPath).subarray(0, 8);
+    if (!header.equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+      errors.push(`文件不是有效的 PNG 图片：docs/${file}`);
+    }
+    continue;
+  }
   const content = readFileSync(fullPath, "utf8");
   if (!content.trim()) errors.push(`文件为空：docs/${file}`);
   for (const match of content.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
@@ -46,4 +53,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-process.stdout.write("文档检查通过：docs 仅包含八模块需求文档与设计稿。\n");
+process.stdout.write("文档检查通过：docs 仅包含八模块需求文档与设计稿图片。\n");

@@ -153,7 +153,7 @@ data/                     运行时数据库，不提交到 Git
 | 资料 | 用途 |
 | --- | --- |
 | [产品需求](docs/CreatorFlow-需求文档.md) | 八个模块的功能与验收要求 |
-| [设计稿](docs/CreatorFlow-设计稿.md) | 视觉、布局、组件与交互规范 |
+| [设计稿](docs/CreatorFlow-设计稿.png) | 当前应用真实页面截图 |
 | [学员起始模板](starter-template/README.md) | 从最小项目开始练习 |
 | [开发规则](AGENTS.md) | 修改范围、代码规范和验证要求 |
 
